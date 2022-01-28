@@ -1,8 +1,8 @@
 package org.xpdojo.bank;
 
 import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
 public class AccountTest {
 
@@ -35,7 +35,8 @@ public class AccountTest {
     public void withdrawWIthErrorAccount() {
         Account account = new Account();
         account.deposit(10);
-        account.withdraw(20);
+        assertThatIllegalArgumentException().isThrownBy(() -> account.withdraw(20));
+
     }
 
 }
