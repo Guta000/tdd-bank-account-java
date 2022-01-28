@@ -10,7 +10,7 @@ public class AccountTest {
     @Test
     public void createAccount() {
         Account account = new Account();
-        assertThat(account).isNot(null);
+        assertThat(account.getDeposit()).isEqualTo(0);
     }
 
 }
